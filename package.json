@@ -1,0 +1,19 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "lab -cv -t 100 -T test/transform.js",
+    "start": "cd browser && python -m http.server",
+    "install": "mkdir -p browser/bundle",
+    "bundle-js": "browserify -t babelify browser/src/components/app.jsx > browser/bundle/app.js"
+  },
+  "devDependencies": {
+    "babel-core": "^5.7.4",
+    "babelify": "^6.1.3",
+    "browserify": "^10.2.6",
+    "code": "^1.4.1",
+    "jsdom": "^5.6.1",
+    "lab": "^5.13.0",
+    "react": "^0.13.3"
+  }
+}
