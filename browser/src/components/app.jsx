@@ -1,9 +1,20 @@
 'use strict'
 
 import React from 'react'
-import Version from './version.jsx'
-import Package from '../../../package.json'
+import Feed from './feed.jsx'
+import Nav from './nav.jsx'
+
+let App = React.createClass({
+  render () {
+    return (
+	<body>
+	  <Feed />
+	  <Nav />
+	</body>
+    )
+  }
+})
 
 document.addEventListener('DOMContentLoaded', e => {
-  React.render(<Version semver={Package.version}/>, e.target.body)
+  React.render(<App/>, e.target.body)
 })
