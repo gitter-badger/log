@@ -4,7 +4,7 @@
   "scripts": {
     "test": "lab -cv -t 100 -T test/transform.js",
     "start": "make server",
-    "install": "mkdir -p browser/bundle",
+    "install": "make install",
     "bundle-js": "browserify -t babelify browser/src/components/app.jsx > browser/bundle/app.js"
   },
   "devDependencies": {

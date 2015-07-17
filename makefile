@@ -1,3 +1,5 @@
+install:
+	@mkdir -p browser/bundle
 server:
 	@echo "checking python..."
 ifeq ($(word 2, $(subst ., , $(shell python --version))), 3)
