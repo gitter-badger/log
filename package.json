@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "test": "lab -cv -t 100 -T test/transform.js",
-    "start": "cd browser && python -m http.server",
+    "start": "make server",
     "install": "mkdir -p browser/bundle",
     "bundle-js": "browserify -t babelify browser/src/components/app.jsx > browser/bundle/app.js"
   },
