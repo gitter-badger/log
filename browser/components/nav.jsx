@@ -27,7 +27,7 @@ export default React.createClass({
         </svg>
 	<svg className={checkClass} onClick={this.props.toggle} version="1.1"
              width="64" height="64" style={{visibility: this.props.editing ? 'visible' : 'hidden'}}>
-	  <g fill="green" transform="translate(20, 16)">
+	  <g fill="green" transform="translate(16, 16)">
 	    <rect x="12" rx="2" ry="2" width="8" height="32" transform="rotate(45 16 16)" />
 	    <rect y="13" rx="2" ry="2" width="8" height="16" transform="rotate(135 4 21)" />
 	  </g>

@@ -4,10 +4,11 @@
   "scripts": {
     "test": "lab -cv -t 100 -T test/transform.js",
     "start": "make server",
+    "stop": "sudo pkill python",
     "install": "make install",
-    "prefixer": "postcss --use autoprefixer browser/bundle/main.css -d browser/bundle",
-    "bundle-js": "browserify -t babelify browser/src/components/app.jsx > browser/bundle/app.js",
-    "bundle-css": "node-sass browser/src/stylesheets/main.sass > browser/bundle/main.css && npm run prefixer"
+    "prefixer": "postcss --use autoprefixer browser/public/main.css -d browser/public",
+    "build-js": "browserify -t babelify browser/components/app.jsx > browser/public/app.js",
+    "build-css": "node-sass browser/stylesheets/main.sass > browser/public/main.css && npm run prefixer"
   },
   "devDependencies": {
     "autoprefixer": "^5.2.0",

@@ -10,11 +10,15 @@ $ npm install
 ```
 Building assets:
 ```sh
-$ npm run bundle-js && npm run bundle-css
+$ npm run build-js && npm run build-css
 ```
 Static server:
 ```sh
 $ npm start
+```
+Stop the server:
+```sh
+$ npm stop
 ```
 Running the tests:
 ```sh
