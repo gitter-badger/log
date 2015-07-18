@@ -39,7 +39,7 @@ export default React.createClass({
   },
   render () {
 
-    let hint = ` enter a todo `
+    let hint = `enter a todo`
 
     let formClass = classSet({
       'editing': this.props.editing
