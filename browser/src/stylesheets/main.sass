@@ -8,6 +8,7 @@ body
   flex-flow: column nowrap
   height: 100vh
   justify-content: flex-end
+  font-family: Verdana, Helvetica, sans-serif
   margin: 0
   overflow: hidden
 
@@ -17,12 +18,13 @@ main
   overflow: auto
   article
     background: #FFF
-    border: 1px solid #DDD
-    margin: 0.5em
+    border-bottom: 1px solid #DDD
     padding: 1em
     date
       color: #AAA
-      font-size: 0.8em
+      font-size: 0.7em
+      font-weight: 600
+      text-transform: uppercase
     p
       margin: 0.5em 0 0 0
 
@@ -37,12 +39,17 @@ form
   textarea
     height: 100%
     padding: 2em
+    outline: none
+    border: 1px solid #ccc
+    border-radius: 4px
     resize: none
     width: 100%
+    font-size: 1em
+    font-family: Verdana, Helvetica, sans-serif;
 
 nav
   background: #FFF
-  border-top: 1px solid #DDD
+  border-top: 1px solid #8A8A8A
   display: flex
   flex-flow: row nowrap
   flex-grow: 0
