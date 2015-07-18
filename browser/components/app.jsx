@@ -1,5 +1,6 @@
 'use strict'
 
+import Forage from 'localforage'
 import React from 'react'
 import Feed from './feed.jsx'
 import Editor from './editor.jsx'
@@ -11,6 +12,17 @@ let App = React.createClass({
       data: [{date: 'nil', body: 'dummy'}],
       editing: false,
       parsing: false
+    })
+  },
+  componentDidMount () {
+
+    let tasks = []
+
+    /* fetch saved tasks */
+    Forage.iterate(task => tasks.push(task), () => {
+      this.setState({
+	data: this.state.data.concat(tasks)
+      })
     })
   },
   toggleEditor (e) {
@@ -26,10 +38,14 @@ let App = React.createClass({
     }
   },
   newTask (task) {
-    this.setState({
-      data: this.state.data.concat([task]),
-      editing: false,
-      parsing: false
+
+    /* save and push */
+    Forage.setItem(Date.now(), task, (err, task) => {
+      this.setState({
+	data: this.state.data.concat([task]),
+	editing: false,
+	parsing: false
+      })
     })
   },
   render () {
