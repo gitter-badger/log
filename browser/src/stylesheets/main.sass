@@ -7,7 +7,7 @@ body
   display: flex
   flex-flow: column nowrap
   height: 100vh
-  justify-content: flex-end
+  justify-content: space-between
   font-family: Verdana, Helvetica, sans-serif
   margin: 0
   overflow: hidden
@@ -60,5 +60,10 @@ nav
   height: 4em
   justify-content: flex-end
   .plus
+    transition: all 0.5s ease
+    translate-origin: 50% 50%
     &:hover
       cursor: pointer
+  .exit
+    transform: rotate(-135deg)
+    transition: all 0.5s ease

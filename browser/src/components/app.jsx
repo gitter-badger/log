@@ -35,7 +35,7 @@ let App = React.createClass({
 	<body>
 	  <Feed data={this.state.feed} />
 	  <Input active={this.state.input} />
-	  <Nav toggle={this.toggleInput} />
+	  <Nav toggle={this.toggleInput} editing={this.state.input} />
 	</body>
     )
   }
