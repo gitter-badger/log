@@ -17,6 +17,7 @@
     "browserify": "^10.2.6",
     "code": "^1.4.1",
     "jsdom": "^5.6.1",
+    "knwl.js": "^1.0.2",
     "lab": "^5.13.0",
     "node-sass": "^3.2.0",
     "postcss-cli": "^1.4.0",

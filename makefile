@@ -2,7 +2,7 @@ uname := $(shell uname -s)
 
 install:
 	mkdir -p browser/public
-	npm run bundle-js & npm run bundle-css
+	npm run build-js & npm run build-css
 
 server:
 	@echo "checking python..."
