@@ -12,14 +12,26 @@ export default React.createClass({
       'exit': this.props.editing
     })
 
+    let checkClass = classSet({
+      'check': true,
+      'save': this.props.editing
+    })
+
     return (
 	<nav>
 	<svg className={plusClass} onClick={this.props.toggle} version="1.1" width="64" height="64">
-	    <g fill="#333" transform="translate(16, 16)">
+	    <g fill="#8A8A8A" transform="translate(16, 16)">
 	      <rect y="12" rx="2" ry="2" width="32" height="8" />
 	      <rect x="12" rx="2" ry="2" width="8" height="32" />
 	    </g>
-          </svg>
+        </svg>
+	<svg className={checkClass} onClick={this.props.toggle} version="1.1"
+             width="64" height="64" style={{visibility: this.props.editing ? 'visible' : 'hidden'}}>
+	  <g fill="green" transform="translate(20, 16)">
+	    <rect x="12" rx="2" ry="2" width="8" height="32" transform="rotate(45 16 16)" />
+	    <rect y="13" rx="2" ry="2" width="8" height="16" transform="rotate(135 4 21)" />
+	  </g>
+        </svg>
         </nav>
     )
   }

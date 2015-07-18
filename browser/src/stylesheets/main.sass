@@ -59,11 +59,19 @@ nav
   flex-shrink: 0
   height: 4em
   justify-content: flex-end
-  .plus
-    transition: all 0.5s ease
-    translate-origin: 50% 50%
+  svg
     &:hover
       cursor: pointer
-  .exit
-    transform: rotate(-135deg)
+  .plus
+    left: 4em
     transition: all 0.5s ease
+    translate-origin: 50% 50%
+  .exit
+    left: 0
+    transform: rotate(-135deg)
+  .check
+    opacity: 0
+    transition: all 0.2s ease
+  .save
+    opacity: 1
+    transition: all 0.5s 0.2s ease
