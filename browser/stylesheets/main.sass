@@ -14,9 +14,8 @@ body
 
 main
   background: #EEE
-  flex-grow: 0
+  flex-shrink: 1
   overflow: auto
-
   article
     background: #FFF
     border-bottom: 1px solid #ccc
@@ -57,13 +56,13 @@ nav
   flex-flow: row nowrap
   flex-grow: 0
   flex-shrink: 0
-  height: 4em
+  height: 6em
   justify-content: flex-end
   svg
     &:hover
       cursor: pointer
   .plus
-    left: 4em
+    left: 6em
     transition: all 0.5s ease
     translate-origin: 50% 50%
   .exit
@@ -72,6 +71,8 @@ nav
   .check
     opacity: 0
     transition: all 0.2s ease
+    visibility: hidden
   .save
     opacity: 1
     transition: all 0.5s 0.2s ease
+    visibility: visible
