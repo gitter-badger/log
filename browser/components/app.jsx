@@ -9,19 +9,17 @@ import Nav from './nav.jsx'
 let App = React.createClass({
   getInitialState () {
     return ({
-      data: [{date: 'nil', body: 'dummy'}],
+      data: [],
       editing: false,
       parsing: false
     })
   },
   componentDidMount () {
 
-    let tasks = []
-
     /* fetch saved tasks */
-    Forage.iterate(task => tasks.push(task), () => {
+    Forage.iterate(task =>  {
       this.setState({
-	data: this.state.data.concat(tasks)
+	data: this.state.data.concat([task])
       })
     })
   },
@@ -40,7 +38,7 @@ let App = React.createClass({
   newTask (task) {
 
     /* save and push */
-    Forage.setItem(Date.now(), task, (err, task) => {
+    Forage.setItem(task.date, task, (err, task) => {
       this.setState({
 	data: this.state.data.concat([task]),
 	editing: false,

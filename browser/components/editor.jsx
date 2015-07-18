@@ -33,7 +33,7 @@ export default React.createClass({
 
     //knwl.init(node.value)
 
-    let task = {date: 'March 12th 2003', body: node.value}
+    let task = {date: Date.now(), body: node.value}
 
     return done(task)
   },
