@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Feed from './feed.jsx'
+import Input from './input.jsx'
 import Nav from './nav.jsx'
 
 let App = React.createClass({
@@ -20,14 +21,21 @@ let App = React.createClass({
 	{ date: 'June 2nd 2015', body: 'Swim to the bahamalamas' },
 	{ date: 'March 18th 2016', body: 'stop breaking the toaster' },
 	{ date: 'June 2nd 2015', body: 'Swim to the bahamalamas (again)' },
-	{ date: 'March 18th 2016', body: 'stalk Brad Pitt' }]
+	{ date: 'March 18th 2016', body: 'stalk Brad Pitt' }],
+      input: false
+    })
+  },
+  toggleInput (e) {
+    this.setState({
+      input: !this.state.input
     })
   },
   render () {
     return (
 	<body>
 	  <Feed data={this.state.feed} />
-	  <Nav />
+	  <Input active={this.state.input} />
+	  <Nav toggle={this.toggleInput} />
 	</body>
     )
   }
