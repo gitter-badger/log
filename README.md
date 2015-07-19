@@ -20,10 +20,15 @@ $ npm run build
 watch assets:
 
 ```sh
-$ npm watch
+$ npm run watch
 ```
 
 >If you would like to use the watch command, you will need [watchman](https://facebook.github.io/watchman/) installed.
+
+```sh
+$ brew update
+$ brew install watchman
+```
 
 server:
 
