@@ -60,21 +60,31 @@ nav
   flex-shrink: 0
   height: 4em
   justify-content: flex-end
-  svg
+  button
+    background: #FFF
+    border: none
+    border-radius: 50%
+    padding: 0
+    overflow: hidden
+    &:focus
+      outline: none
     &:hover
       cursor: pointer
   .toggle
-    left: 4em
+    transform: translateX(64px)
     transition: all 0.5s ease
-    translate-origin: 50% 50%
+    svg
+      transition: all 0.5s ease
     &.editing
-      left: 0
-      transform: rotate(-135deg)
+      transform: translateX(0px)
+      svg
+        transform: rotate(-135deg)
+        translate-origin: 50% 50%
   .checkMark
     opacity: 0
     transition: all 0.2s ease
     visibility: hidden
     &.editing
       opacity: 1
-      transition: all 0.5s 0.2s ease
+      transition: all 0.5s 0.25s ease
       visibility: visible
