@@ -4,23 +4,36 @@ A learning experiment in mobile application design & development.
 
 Getting Started
 ---
-This will install most (if not all) of the necessary dependencies.
+
+install:
+
 ```sh
 $ npm install
 ```
-Building assets:
+
+build assets:
+
 ```sh
-$ npm run build-js && npm run build-css
+$ npm run build
 ```
-Static server:
+
+watch assets:
+
+```sh
+$ npm watch
+```
+
+>If you would like to use the watch command, you will need [watchman](https://facebook.github.io/watchman/) installed.
+
+server:
+
 ```sh
 $ npm start
-```
-Stop the server:
-```sh
 $ npm stop
 ```
-Running the tests:
+
+testing:
+
 ```sh
 $ npm test
 ```
