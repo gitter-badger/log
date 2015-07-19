@@ -1,5 +1,6 @@
 'use strict'
 
+import Moment from 'moment'
 import React from 'react/addons'
 import Knwl from 'knwl.js'
 
@@ -31,15 +32,26 @@ export default React.createClass({
   },
   parseTask (node, done) {
 
-    //knwl.init(node.value)
+    let tasks = node.value.split('\n\n').map(task => {
 
-    let task = {date: Date.now(), body: node.value}
+      knwl.init(task)
 
-    return done(task)
+      /* only cares about the first instance (for now) */
+      let when = dateTime(knwl.get('dates')[0], knwl.get('times')[0])
+
+      return ({
+	when: when,
+	body: task
+      })
+    })
+
+    return done(tasks)
+
+
   },
   render () {
 
-    let hint = `enter a todo`
+    let hint = `Please enter a todo. Make sure to include a date (1/12/2016, APR 23rd, etc) and/or time (12:30 PM, 2 AM). This is a WIP / feedback welcome`
 
     let formClass = classSet({
       'editing': this.props.editing
@@ -52,3 +64,44 @@ export default React.createClass({
     )
   }
 })
+
+
+function dateTime (date, time) {
+  let moment = Moment()
+
+  if (date) {
+
+    if (date.year && typeof date.year === 'number') {
+      moment.year(date.year)
+    }
+
+    /* expects 0-11 */
+    moment.month(--date.month)
+
+    moment.date(date.day)
+  }
+
+  if (time) {
+
+    let hour = Number(time.hour)
+
+    switch (time.daynight) {
+    case 'AM':
+      if (hour === 12) {
+	hour += 12
+      }
+      break
+    case 'PM':
+      if (hour !== 12) {
+	hour += 12
+      }
+      break
+    }
+
+    moment.hour(hour)
+
+    moment.minute(Number(time.minute))
+  }
+
+  return moment.format('x')
+}

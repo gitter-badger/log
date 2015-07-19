@@ -20,6 +20,7 @@
     "knwl.js": "^1.0.2",
     "lab": "^5.13.0",
     "localforage": "^1.2.4",
+    "moment": "^2.10.3",
     "node-sass": "^3.2.0",
     "postcss-cli": "^1.4.0",
     "react": "^0.13.3"

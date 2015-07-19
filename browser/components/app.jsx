@@ -35,16 +35,16 @@ let App = React.createClass({
       })
     }
   },
-  newTask (task) {
+  newTask (tasks) {
 
-    /* save and push */
-    Forage.setItem(task.date, task, (err, task) => {
-      this.setState({
-	data: this.state.data.concat([task]),
-	editing: false,
-	parsing: false
-      })
+    /* push and save */
+    this.setState({
+      data: this.state.data.concat(tasks),
+      editing: false,
+      parsing: false
     })
+
+    tasks.forEach(task => Forage.setItem(task.when, task))
   },
   render () {
     return (
