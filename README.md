@@ -1,5 +1,7 @@
 Todoofus
 ===
+
+[![Join the chat at https://gitter.im/jsimplicio/log](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jsimplicio/log?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A learning experiment in mobile application design & development.
 
 Getting Started
